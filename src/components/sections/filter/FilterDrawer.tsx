@@ -33,7 +33,14 @@ const FilterDrawer = ({ active, closeDrawer }: { active: boolean; closeDrawer: (
         </div>
 
         <div className="mt-5 flex-grow">
-          <div className="mb-3">
+          <div className="flex gap-2 items-center flex-wrap mb-5">
+            {["Today", "Last 7 days", "This month", "Last 3 months"].map((el) => (
+              <CustomButton variant="outline" size="sm" className="rounded-full">
+                {el}
+              </CustomButton>
+            ))}
+          </div>
+          <div className="mb-5">
             <label htmlFor="" className="tracking-[0.3px] mb-1">
               Date Range
             </label>
@@ -43,7 +50,7 @@ const FilterDrawer = ({ active, closeDrawer }: { active: boolean; closeDrawer: (
             </div>
           </div>
 
-          <div className="mb-3">
+          <div className="mb-5">
             <label htmlFor="" className="tracking-[0.3px] mb-1">
               Transaction Type
             </label>
@@ -55,7 +62,7 @@ const FilterDrawer = ({ active, closeDrawer }: { active: boolean; closeDrawer: (
             </div>
           </div>
 
-          <div className="mb-3">
+          <div className="mb-5">
             <label htmlFor="" className="tracking-[0.3px] mb-1">
               Transaction Status
             </label>

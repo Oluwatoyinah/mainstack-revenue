@@ -1,4 +1,8 @@
 import MainstackLogo from "@assets/images/mainstack-logo.svg";
+import Product1 from "@assets/images/product-1.png";
+import Product2 from "@assets/images/product-2.png";
+import Product3 from "@assets/images/product-3.png";
+import Product4 from "@assets/images/product-4.png";
 import homeIcon from "@assets/icons/home.svg";
 import analyticsIcon from "@assets/icons/analytics.svg";
 import revenueIcon from "@assets/icons/revenue.svg";
@@ -16,7 +20,7 @@ import Menu from "@assets/icons/menu.svg";
 
 import { INavItem } from "types/nav";
 
-export const IMAGES = { MainstackLogo };
+export const IMAGES = { MainstackLogo, Product1, Product2, Product3, Product4 };
 export const ICONS = {
   homeIcon,
   analyticsIcon,

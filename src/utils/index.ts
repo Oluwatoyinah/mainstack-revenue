@@ -39,37 +39,44 @@ export const filterTransactions = (
     transaction_status?: string[];
   }
 ) => {
-  return data.filter((transaction) => {
-    const transactionDate = new Date(transaction.date);
+  return (
+    data &&
+    data?.filter((transaction) => {
+      const transactionDate = new Date(transaction.date);
 
-    if (filters.date_from) {
-      const dateFrom = new Date(filters.date_from);
-      if (transactionDate < dateFrom) {
-        return false;
+      if (filters.date_from) {
+        const dateFrom = new Date(filters.date_from);
+        if (transactionDate < dateFrom) {
+          return false;
+        }
       }
-    }
 
-    if (filters.date_to) {
-      const dateTo = new Date(filters.date_to);
-      if (transactionDate > dateTo) {
-        return false;
+      if (filters.date_to) {
+        const dateTo = new Date(filters.date_to);
+        if (transactionDate > dateTo) {
+          return false;
+        }
       }
-    }
 
-    if (filters.transaction_type && filters.transaction_type.length > 0) {
-      const mappedTransactionType =
-        transaction.type === "deposit" ? "Store Transactions" : transaction.type === "withdrawal" ? "Withdrawals" : "";
-      if (!filters.transaction_type.includes(mappedTransactionType)) {
-        return false;
+      if (filters.transaction_type && filters.transaction_type.length > 0) {
+        const mappedTransactionType =
+          transaction.type === "deposit"
+            ? "Store Transactions"
+            : transaction.type === "withdrawal"
+            ? "Withdrawals"
+            : "";
+        if (!filters.transaction_type.includes(mappedTransactionType)) {
+          return false;
+        }
       }
-    }
 
-    if (filters.transaction_status && filters.transaction_status.length > 0) {
-      if (!filters.transaction_status.includes(transaction.status)) {
-        return false;
+      if (filters.transaction_status && filters.transaction_status.length > 0) {
+        if (!filters.transaction_status.includes(transaction.status)) {
+          return false;
+        }
       }
-    }
 
-    return true;
-  });
+      return true;
+    })
+  );
 };
