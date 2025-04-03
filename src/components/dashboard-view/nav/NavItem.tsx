@@ -12,7 +12,7 @@ const NavItem = ({ data: { name, icon, uri } }: NavItemProps) => {
       className={({ isActive }) =>
         isActive
           ? "text-white  bg-[#131316] p-[5px] pl-3 pr-4.5 rounded-full trans"
-          : "text-[#56616B] p-[4px] pl-2 pr-3.5 rounded-full trans"
+          : "text-[#56616B] p-[4px] pl-2 pr-3.5 rounded-full trans hover:bg-[#EFF1F6]  hover:text-[#131316] hover:px-4"
       }
     >
       <span className="flex gap-1 items-center">
